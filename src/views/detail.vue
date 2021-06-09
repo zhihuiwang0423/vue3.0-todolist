@@ -25,6 +25,7 @@ export default defineComponent({
     let store = useStore()
     let list = computed(()=>{
       console.log(store.state.dataList)
+      localStorage.setItem('localData',store.state.dataList)
       return store.state.dataList
     })
     let addListFn=(val)=>{
