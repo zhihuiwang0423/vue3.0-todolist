@@ -1,7 +1,8 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <h1>vue3.0 todolist案例展示</h1>
+    <!-- <router-link to="/">Home</router-link> | -->
+    <!-- <router-link to="/about">About</router-link> -->
   </div>
   <router-view/>
 </template>

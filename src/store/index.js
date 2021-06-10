@@ -11,24 +11,29 @@ export default createStore({
     ]
   },
   mutations: {
+    setDataList(state, payload){
+      state.dataList = payload
+    },
     //同步修改state 都是方法
     // 第一个参数 state 第二个参数，需要修改的值
     // 搜索文本框中，如果搜索内容没有，则添加到列表里，如果有，则显示已存在。
     addOption(state, payload){
-      console.log(payload)
       state.dataList.push(payload)
       console.log(state.dataList)
     },
     // 数据列表里删除按钮，点击后删除此条数据
     delOption(state, payload){
       state.dataList.splice(payload,1)
+      console.log(state.dataList)
     },
     // 清除已选按钮，点击后，清空列表
    delAllOption(state, payload){
-     console.log(payload)
      state.dataList=payload
      console.log(state.dataList)
-   }
+   },
+   saveLocalData(state, payload){
+     localStorage.setItem('localData',payload)
+   },
   },
   actions: {
     // 异步提交mutation

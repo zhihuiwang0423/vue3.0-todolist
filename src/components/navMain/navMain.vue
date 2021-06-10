@@ -2,8 +2,9 @@
   <div v-if="listTrans.length">
     <ul v-for="(item, index) in listTrans" :key="index">
       <li class="list">
-        <el-checkbox v-model="item.complete"></el-checkbox>
+        <el-checkbox v-model="item.complete" @change="checkboxFn">
         <span>{{ item.title }}</span>
+        </el-checkbox>
         <el-button
           class="del"
           @click="delFn(item, index)"
@@ -28,11 +29,14 @@ export default defineComponent({
       default: [],
     },
   },
-  emits: ["delList"],
+  emits: ["delList","checkboxFn"],
   setup(props, ctx) {
     let listTrans = computed(()=>{
       return props.list
     });
+    let checkboxFn=()=>{
+      ctx.emit('checkboxFn')
+    }
     let delFn = (item, index) => {
       ctx.emit("delList", index);
       //
@@ -40,6 +44,7 @@ export default defineComponent({
     return {
       delFn,
       listTrans,
+      checkboxFn
     };
   },
 });
