@@ -19,17 +19,14 @@ export default createStore({
     // 搜索文本框中，如果搜索内容没有，则添加到列表里，如果有，则显示已存在。
     addOption(state, payload){
       state.dataList.push(payload)
-      console.log(state.dataList)
-    },
+    }, 
     // 数据列表里删除按钮，点击后删除此条数据
     delOption(state, payload){
       state.dataList.splice(payload,1)
-      console.log(state.dataList)
     },
     // 清除已选按钮，点击后，清空列表
    delAllOption(state, payload){
      state.dataList=payload
-     console.log(state.dataList)
    },
    saveLocalData(state, payload){
      localStorage.setItem('localData',payload)

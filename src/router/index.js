@@ -24,6 +24,20 @@ const routes = [
   //  component箭头函数的形式，是按需要引入。
   // 如果没有访问About 就不会加载这个组件，节约性能
     component: () => import('../views/detail.vue')
+  },
+  {
+    path: '/watchRouter',
+    name: 'watchRouter',
+  //  component箭头函数的形式，是按需要引入。
+  // 如果没有访问About 就不会加载这个组件，节约性能
+    component: () => import('../views/watch.vue')
+  },
+  {
+    path: '/tree',
+    name: 'Tree',
+  //  component箭头函数的形式，是按需要引入。
+  // 如果没有访问About 就不会加载这个组件，节约性能
+    component: () => import('../views/tree.vue')
   }
 ]
 
